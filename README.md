@@ -9,6 +9,11 @@ A small full-stack starter for student projects. It includes:
 - Validated local file uploads
 - Provider-neutral AI instructions and project skills
 
+สำหรับนักศึกษาที่ใช้ Windows โปรดอ่าน
+[คู่มือการสร้างโปรเจกต์ฉบับภาษาไทย](docs/STUDENT_GUIDE_TH.md)
+ตั้งแต่การติดตั้งโปรแกรม การสำรวจโครงสร้างและเทคโนโลยีใน repo การใช้ Git
+ไปจนถึงตัวอย่าง prompt สำหรับทำงานร่วมกับ AI
+
 ## Start
 
 Install Node.js 22 and enable Corepack, then run:
