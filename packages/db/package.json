@@ -1,0 +1,25 @@
+{
+  "name": "@starter/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "db:generate": "node ../../scripts/with-api-env.mjs prisma generate --schema prisma/schema.prisma",
+    "db:validate": "node ../../scripts/with-api-env.mjs prisma validate --schema prisma/schema.prisma",
+    "db:migrate": "node ../../scripts/with-api-env.mjs prisma migrate dev --schema prisma/schema.prisma",
+    "db:deploy": "node ../../scripts/with-api-env.mjs prisma migrate deploy --schema prisma/schema.prisma",
+    "db:seed": "node ../../scripts/with-api-env.mjs tsx prisma/seed.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.2"
+  },
+  "devDependencies": {
+    "prisma": "^6.19.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

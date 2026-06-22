@@ -1,0 +1,26 @@
+{
+  "name": "student-project-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "dev": "pnpm db:generate && pnpm --filter @starter/shared build && pnpm --filter @starter/db build && pnpm --parallel --filter @starter/api --filter @starter/web dev",
+    "build": "pnpm db:generate && pnpm -r --sort build",
+    "typecheck": "pnpm db:generate && pnpm --filter @starter/shared build && pnpm --filter @starter/db build && pnpm -r --filter @starter/api --filter @starter/web --sort typecheck",
+    "test": "pnpm -r --if-present test",
+    "db:generate": "pnpm --filter @starter/db db:generate",
+    "db:validate": "pnpm --filter @starter/db db:validate",
+    "db:migrate": "pnpm --filter @starter/db db:migrate",
+    "db:deploy": "pnpm --filter @starter/db db:deploy",
+    "db:seed": "pnpm --filter @starter/db db:seed",
+    "clean": "pnpm -r --if-present clean"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}

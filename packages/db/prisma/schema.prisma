@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model ShowcaseItem {
+  id                     String   @id @default(uuid())
+  title                  String
+  description            String?
+  completed              Boolean  @default(false)
+  attachmentStoredName   String?  @map("attachment_stored_name")
+  attachmentOriginalName String?  @map("attachment_original_name")
+  attachmentMimeType     String?  @map("attachment_mime_type")
+  attachmentSizeBytes    Int?     @map("attachment_size_bytes")
+  createdAt              DateTime @default(now()) @map("created_at")
+  updatedAt              DateTime @updatedAt @map("updated_at")
+
+  @@map("showcase_items")
+}
