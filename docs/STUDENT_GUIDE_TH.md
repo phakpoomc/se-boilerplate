@@ -72,6 +72,12 @@ corepack --version
 
 ผลลัพธ์ `node --version` ควรขึ้นต้นด้วย `v22`.
 
+หากขึ้น Error เกี่ยวกับ Policy ให้เปิด PowerShell แบบ Administrator แล้วพิมพ์
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
 เปิดใช้งาน Corepack เพื่อให้โปรเจกต์ใช้ pnpm เวอร์ชันที่กำหนดไว้:
 
 ```powershell
